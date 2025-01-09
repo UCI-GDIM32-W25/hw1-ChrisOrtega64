@@ -40,7 +40,6 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.D) || (Input.GetKey(KeyCode.RightArrow)))
         {
             _playerTransform.Translate(Vector3.right * _speed * Time.deltaTime);
-
         }
     }
 
@@ -48,7 +47,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-           // _plantPrefab;
+            Instantiate(_plantPrefab);
         }
     }
 }
