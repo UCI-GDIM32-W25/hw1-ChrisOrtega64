@@ -51,9 +51,6 @@ public class Player : MonoBehaviour
 
     public void PlantSeed ()
     {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Instantiate(_plantPrefab);
-        }
+        Instantiate(_plantPrefab);
     }
 }
