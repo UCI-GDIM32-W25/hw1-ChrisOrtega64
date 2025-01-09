@@ -30,12 +30,12 @@ Affected Objects:
 
 UI
 Attributes:
-- # of Seeds Planted
-- # of Seeds Remaining
+- Number of Seeds Planted
+- Number of Seeds Remaining
 
 Affected Objects:
-- # of Seeds Remaining Changes by -1 when Seed is Planted
-- # of Seeds Plants Changes by +1 when Seed is Planted/Placed on Screen
+- Number of Seeds Remaining Changes by -1 when Seed is Planted
+- Number of Seeds Plants Changes by +1 when Seed is Planted/Placed on Screen
 - Only Changes when Seed is Planted
 
 
