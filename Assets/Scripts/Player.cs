@@ -41,7 +41,13 @@ public class Player : MonoBehaviour
         {
             _playerTransform.Translate(Vector3.right * _speed * Time.deltaTime);
         }
-    }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            PlantSeed();
+        }
+
+        }
 
     public void PlantSeed ()
     {
