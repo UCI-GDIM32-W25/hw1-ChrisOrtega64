@@ -18,7 +18,30 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        
+        // If player inputs W or the Up Arrow, the player will move up
+        if (Input.GetKey(KeyCode.W) || (Input.GetKey(KeyCode.UpArrow)))
+        {
+            _playerTransform.Translate(Vector3.up * _speed * Time.deltaTime);
+        }
+
+        // If player inputs S or the Down Arrow, the player will move down
+        if (Input.GetKey(KeyCode.S) || (Input.GetKey(KeyCode.DownArrow)))
+        {
+            _playerTransform.Translate(Vector3.down * _speed * Time.deltaTime);
+        }
+
+        // If player inputs A or the Left Arrow, the player will move left
+        if (Input.GetKey(KeyCode.A) || (Input.GetKey(KeyCode.LeftArrow)))
+        {
+            _playerTransform.Translate(Vector3.left * _speed * Time.deltaTime);
+        }
+
+        // If player inputs D or the Right Arrow, the player will move right
+        if (Input.GetKey(KeyCode.D) || (Input.GetKey(KeyCode.RightArrow)))
+        {
+            _playerTransform.Translate(Vector3.right * _speed * Time.deltaTime);
+
+        }
     }
 
     public void PlantSeed ()
