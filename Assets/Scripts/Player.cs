@@ -13,7 +13,8 @@ public class Player : MonoBehaviour
 
     private void Start ()
     {
-
+        _numSeedsLeft = 5;
+        _numSeedsPlanted = 0;
     }
 
     private void Update()
@@ -42,7 +43,7 @@ public class Player : MonoBehaviour
             _playerTransform.Translate(Vector3.right * _speed * Time.deltaTime);
         }
 
-        // If Space is pressed/detected, it will call upon PlantSeed() function
+        // If Space is pressed/detected (GetKeyUp) , it will call upon PlantSeed() function
         if (Input.GetKeyUp(KeyCode.Space))
         {
             PlantSeed();
@@ -53,5 +54,6 @@ public class Player : MonoBehaviour
     {
         // Clones Seed Prefab once
         Instantiate(_plantPrefab, _playerTransform.position, Quaternion.identity);
+        _plantCountUI.UpdateSeeds(_numSeedsLeft, _numSeedsPlanted);
     }
 }
