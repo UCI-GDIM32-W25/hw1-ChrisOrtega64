@@ -54,6 +54,8 @@ public class Player : MonoBehaviour
     {
         // Clones Seed Prefab once
         Instantiate(_plantPrefab, _playerTransform.position, Quaternion.identity);
+        
+
         _plantCountUI.UpdateSeeds(_numSeedsLeft, _numSeedsPlanted);
     }
 }
