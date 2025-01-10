@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -13,8 +14,10 @@ public class Player : MonoBehaviour
 
     private void Start ()
     {
-        _numSeedsLeft = 5;
+        _plantCountUI.UpdateSeeds(_numSeedsLeft, _numSeedsPlanted);
+
         _numSeedsPlanted = 0;
+        _numSeedsLeft = 5;
     }
 
     private void Update()
@@ -46,7 +49,21 @@ public class Player : MonoBehaviour
         // If Space is pressed/detected (GetKeyUp) , it will call upon PlantSeed() function
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            PlantSeed();
+            //If number of seeds planted is less than or equal to 5, then it will keep calling the PlantSeed() function
+            if (_numSeedsPlanted <= 5)
+            {
+                PlantSeed();
+                //It will also change the value by one to the number of seeds planted text UI
+                _numSeedsPlanted++;
+                // When a prefab is placed, it will subtract a value of one on the number of seeds left text UI
+                _numSeedsLeft--;
+                Debug.Log("Seed has been planted!");
+
+            }
+            else if(_numSeedsPlanted == 5)
+            {
+                Debug.Log("Maximum number of seeds planted");
+            }
         }
     }
 
@@ -54,8 +71,7 @@ public class Player : MonoBehaviour
     {
         // Clones Seed Prefab once
         Instantiate(_plantPrefab, _playerTransform.position, Quaternion.identity);
-        
-
         _plantCountUI.UpdateSeeds(_numSeedsLeft, _numSeedsPlanted);
+
     }
 }
