@@ -42,20 +42,16 @@ public class Player : MonoBehaviour
             _playerTransform.Translate(Vector3.right * _speed * Time.deltaTime);
         }
 
-        // If Space is pressed, it will call upon PlantSeed() function
-        if (Input.GetKey(KeyCode.Space))
+        // If Space is pressed/detected, it will call upon PlantSeed() function
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             PlantSeed();
         }
-
-        }
+    }
 
     public void PlantSeed ()
     {
-        // Clones Seed Prefab
-        for (int i = 0; i < _numSeeds; i++)
-        {
-            Instantiate(_plantPrefab, _playerTransform.position, Quaternion.identity);
-        }
+        // Clones Seed Prefab once
+        Instantiate(_plantPrefab, _playerTransform.position, Quaternion.identity);
     }
 }
