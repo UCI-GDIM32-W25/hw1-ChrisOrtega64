@@ -16,7 +16,8 @@ public class Player : MonoBehaviour
     {
         _plantCountUI.UpdateSeeds(_numSeedsLeft, _numSeedsPlanted);
 
-        _numSeedsPlanted = 0;
+        _numSeedsPlanted = 0; //Remove this later
+
         _numSeedsLeft = 5;
     }
 
@@ -49,21 +50,22 @@ public class Player : MonoBehaviour
         // If Space is pressed/detected (GetKeyUp) , it will call upon PlantSeed() function
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            //If number of seeds planted is less than or equal to 5, then it will keep calling the PlantSeed() function
-            if (_numSeedsPlanted <= 5)
-            {
-                PlantSeed();
-                //It will also change the value by one to the number of seeds planted text UI
-                _numSeedsPlanted++;
-                // When a prefab is placed, it will subtract a value of one on the number of seeds left text UI
-                _numSeedsLeft--;
-                Debug.Log("Seed has been planted!");
+           //If number of seeds planted is less than or equal to 5, then it will keep calling the PlantSeed() function
+           if (_numSeedsPlanted <= 5)
+           {
+               PlantSeed();
+               //It will also change the value by one to the number of seeds planted text UI
+               _numSeedsPlanted++;
+               // When a prefab is placed, it will subtract a value of one on the number of seeds left text UI
+               _numSeedsLeft--;
+               Debug.Log("Seed has been planted!");
 
-            }
-            else if(_numSeedsPlanted == 5)
-            {
-                Debug.Log("Maximum number of seeds planted");
-            }
+           }
+           else if(_numSeedsPlanted == 5)
+           {
+               Debug.Log("Maximum number of seeds planted");
+           }
+          
         }
     }
 
