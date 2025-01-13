@@ -11,7 +11,7 @@ How do these objects act on or affect each other?
 Player Bunny
 
 Attributes: 
-- Bunny sprite
+- Bunny Sprite
 - WASD: Moves Around
 - Space to Plant Seeds
 
