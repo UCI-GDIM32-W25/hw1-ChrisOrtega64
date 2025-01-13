@@ -8,7 +8,8 @@ How would you describe this game world in objects?
 What attributes and actions do these objects have?
 How do these objects act on or affect each other?
 
-Player bunny
+Player Bunny
+
 Attributes: 
 - Bunny sprite
 - WASD: Moves Around
@@ -21,6 +22,7 @@ Affected Objects:
 - Can No Longer Place Any Seeds when Seeds Remaining = 0
 
 Flower
+
 Attributes:
 - Appears on Screen when Space is pressed
 - Can be placed anywhere on the screen
@@ -29,6 +31,7 @@ Affected Objects:
 - Stays on Screen, Never Moves
 
 UI
+
 Attributes:
 - Number of Seeds Planted
 - Number of Seeds Remaining
