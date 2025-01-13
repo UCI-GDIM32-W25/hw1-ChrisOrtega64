@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     private void Start ()
     {
-        _numSeedsLeft = 10;
+        _numSeedsLeft = 1;
         _plantCountUI.UpdateSeeds(_numSeedsLeft, _numSeedsPlanted);
     }
 
@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
            //If number of seeds planted is less than or equal to 5, then it will keep calling the PlantSeed() function & update Seeds Planted and Left text UI
-           if (_numSeedsPlanted <= 9)
+           if (_numSeedsPlanted <= 0)
            {
                 //It will also change the value by one to the number of seeds planted text UI
                 _numSeedsPlanted++;
@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
                 PlantSeed();
 
            }
-           else if(_numSeedsPlanted == 10)
+           else if(_numSeedsPlanted == 1)
            {
                Debug.Log("Maximum number of seeds planted");
            }
