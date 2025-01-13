@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     private void Start ()
     {
-        _numSeedsLeft = 5;
+        _numSeedsLeft = 10;
         _plantCountUI.UpdateSeeds(_numSeedsLeft, _numSeedsPlanted);
     }
 
@@ -44,11 +44,11 @@ public class Player : MonoBehaviour
             _playerTransform.Translate(Vector3.right * _speed * Time.deltaTime);
         }
 
-        // If Space is pressed/detected (GetKeyUp) , it will call upon PlantSeed() function
+        // If Space is pressed/detected (GetKeyUp) , it will call the PlantSeed() function
         if (Input.GetKeyUp(KeyCode.Space))
         {
            //If number of seeds planted is less than or equal to 5, then it will keep calling the PlantSeed() function & update Seeds Planted and Left text UI
-           if (_numSeedsPlanted <= 4)
+           if (_numSeedsPlanted <= 9)
            {
                 //It will also change the value by one to the number of seeds planted text UI
                 _numSeedsPlanted++;
@@ -56,9 +56,9 @@ public class Player : MonoBehaviour
                 _numSeedsLeft--;
                 Debug.Log("Seed has been planted!");
                 PlantSeed();
-               
+
            }
-           else if(_numSeedsPlanted == 5)
+           else if(_numSeedsPlanted == 10)
            {
                Debug.Log("Maximum number of seeds planted");
            }
